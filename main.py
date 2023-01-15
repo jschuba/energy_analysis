@@ -1,5 +1,3 @@
-
-
 import os
 
 import numpy as np
@@ -67,19 +65,18 @@ dam_model = TimeSeriesModel()
 dam_model.fit(training_data, 'time', 'DAM')
 training_data = dam_model.predict(training_data, 'time')
 dam_model.plot_components(training_data, save_loc='DAM model components.png', title='DAM model components')
-dam_model.plot_prediction(training_data, save_loc='DAM model prediction (training).png', title='DAM model prediction (training)')
+dam_model.plot_prediction(training_data, save_loc='DAM model prediction (training).png',
+                          title='DAM model prediction (training)')
 test_data = dam_model.predict(test_data, 'time')
 dam_model.plot_prediction(test_data, save_loc='DAM model prediction (test).png', title='DAM model prediction (test)')
 
 all_data = pd.concat([training_data, test_data])
 dam_model.plot_prediction(all_data, save_loc='DAM model prediction (all).png', title='DAM model prediction (all)')
 
-
 print(f"DAM Training Metrics")
 Metrics().print_all_metrics(training_data['DAM'], training_data['yhat'])
 print(f"DAM Test Metrics")
 Metrics().print_all_metrics(test_data['DAM'], test_data['yhat'])
-
 
 """
 At this point, I have exhausted the time I allotted for this assignment (3 hours). 
@@ -124,6 +121,3 @@ Next Steps / Ideas
 
 
 """
-
-
-

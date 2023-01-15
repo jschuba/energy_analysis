@@ -17,5 +17,4 @@ class Metrics:
                      mean_absolute_percentage_error,
                      mean_squared_error,
                      r2_score]:
-
             print(f"{func.__name__}: {func(y, y_hat)}")
